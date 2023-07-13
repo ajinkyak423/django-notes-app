@@ -1,5 +1,10 @@
 pipeline {
-    agent any      
+    agent{
+        docker{
+            image 'ajinkyak423/my-note-app:v1'
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+        }
+    }   
     stages {
         stage('Code') {
             steps {
