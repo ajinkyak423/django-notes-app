@@ -1,7 +1,6 @@
 pipeline {
     agent {
         docker {
-            label 'docker-agent' // Specify the label for the Docker agent
             image 'python:3.9' // Use Python 3.9 as the base image for the Docker agent
             args '-v /var/run/docker.sock:/var/run/docker.sock' // Mount the Docker socket for communication with the host Docker daemon
         }
