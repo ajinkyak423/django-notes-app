@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            label 'docker-agent'
+            label 'docker-slave'
             image 'python:3.9' // Use Python 3.9 as the base image for the Docker agent
         }
     }
