@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'python:3.9' // Use Python 3.9 as the base image for the Docker agent
-            args '-v /var/run/docker.sock:/var/run/docker.sock' // Mount the Docker socket for communication with the host Docker daemon
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
         }
     }
     stages {
